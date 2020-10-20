@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //* mongoose config
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/books', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weSkool', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
