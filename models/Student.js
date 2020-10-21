@@ -7,6 +7,9 @@ const StudentSchema = new Schema({
     required: true,
     unique: true,
   },
+  grade: { type: String, required: true, },
+  age: { type: Number, required: true, },
+  photo: { type: String, },
   activities: [
     {
       type: Schema.Types.ObjectId,
