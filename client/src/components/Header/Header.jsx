@@ -1,47 +1,50 @@
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Nav from 'react-bootstrap/Nav';
+import React, { Component } from 'react';
+import { MDBCollapse, MDBHamburgerToggler, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink } from 'mdbreact';
 
-const Header = () => {
-  return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
-      <Navbar.Brand href="#home">
-        {/* <img
-        alt=""
-        src="/logo.png"
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-      />{' '} */}
-        weSkool
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#login">Login</Nav.Link>
-          <Nav.Link href="#students">Students</Nav.Link>
-          <NavDropdown title="Activities" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">View All Activities</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Log a new activity
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <Nav>
-          <Nav.Link href="#deets">More deets</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            Dank memes
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-};
+class Header extends Component {
+  state = {
+    collapse1: false,
+    collapseID: '',
+  };
+
+  toggleCollapse = (collapseID) => () => {
+    this.setState((prevState) => ({
+      collapseID: prevState.collapseID !== collapseID ? collapseID : '',
+    }));
+  };
+
+  toggleSingleCollapse = (collapseId) => {
+    this.setState({
+      ...this.state,
+      [collapseId]: !this.state[collapseId],
+    });
+  };
+
+  render() {
+    return (
+      <MDBNavbar color="default-color" scrolling fixed="top" id="header">
+        <MDBNavbarBrand>weSkool</MDBNavbarBrand>
+        <MDBHamburgerToggler
+          color="#d3531a"
+          id="hamburger1"
+          onClick={() => this.toggleSingleCollapse('collapse1')}
+        />
+        <MDBCollapse isOpen={this.state.collapse1} navbar>
+          <MDBNavbarNav left>
+            <MDBNavItem active>
+              <MDBNavLink to={'/'}>Home</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem >
+              <MDBNavLink to={'/students'}>Students</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem >
+              <MDBNavLink to={'/activities'}>Activities</MDBNavLink>
+            </MDBNavItem>
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBNavbar>
+    );
+  }
+}
 
 export default Header;
