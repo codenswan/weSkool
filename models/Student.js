@@ -1,18 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const StudentsSchema = new Schema({
-    name: {
-        type: String,
-        unique: true
+const StudentSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  activities: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Activity',
     },
-    activities: {
-        type: Schema.Types.ObjectId,
-        ref: "Activities"
-    }
+  ],
+});
 
-})
-
-const Student = mongoose.model("Student", StudentsSchema)
+const Student = mongoose.model('Student', StudentSchema);
 
 module.exports = Student;
