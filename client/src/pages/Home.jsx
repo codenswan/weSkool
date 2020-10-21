@@ -1,29 +1,23 @@
 import React from 'react';
-import { MDBBtn, MDBBtnGroup, MDBCol, MDBRow } from 'mdbreact';
-import BtnGroupPage from '../components/BtnGroupPage/BtnGroupPage';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { BiUserPlus } from 'react-icons/bi';
+import { MDBBtn, MDBBtnGroup, MDBCol, MDBContainer, MDBRow } from 'mdbreact';
 import './styles.css';
 
 const Home = () => {
   return (
-      <Container id="homeContainer">
-      <Row>
-        <Col>
-          <ButtonGroup id="homeBtns" vertical >
-            <Button id="loginBtn"> Login</Button>
-            <Button >
+    <MDBContainer id="homeContainer">
+      <MDBRow>
+        <MDBCol>
+          <MDBBtnGroup id="homeBtns" vertical>
+            <MDBBtn id="loginBtn"> Login</MDBBtn>
+            <MDBBtn>
               {' '}
               <BiUserPlus /> Add Teacher{' '}
-            </Button>
-          </ButtonGroup>
-        </Col>
-      </Row>
-    </Container>
+            </MDBBtn>
+          </MDBBtnGroup>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
   );
 };
 
