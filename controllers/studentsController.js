@@ -9,7 +9,14 @@ module.exports = {
       res.status(422).json(error);
     }
   },
-
+  findAll: async (req, res) => {
+try {
+  const studentData = await Student.find({});
+  res.status(201).json(studentData);
+} catch (error) {
+  res.status(422).json(error);
+}
+  },
   findById: async (req, res) => {
     try {
       const data = await Student.findById(req.params.id);
