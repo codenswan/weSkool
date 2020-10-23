@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const compression = require('compression');
 const mongoose = require('mongoose');
-const routes = require('./routes');
+const routes = require('../routes');
 
 //* middleware
 const app = express();
