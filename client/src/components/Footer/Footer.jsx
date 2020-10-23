@@ -6,29 +6,26 @@ import {
   MDBFooter,
   MDBNav,
   MDBNavItem,
-  MDBLink,
   MDBBtn,
   MDBIcon,
 } from 'mdbreact';
-import { ImHome } from 'react-icons/im';
-import './styles.css';
 
 const FooterPage = () => {
   return (
     <MDBFooter color="stylish-color" className="pt-4 mt-4 fixed-bottom">
       <MDBContainer>
         <MDBRow>
-          <MDBCol>
+          <MDBCol className="mb-4" >
             <MDBNav>
               <MDBNavItem>
-                <MDBLink>
-                  <a id="icons" href="/">
-                    <ImHome size="3rem"/> 
-                  </a>
-                </MDBLink>
+                <MDBBtn href="/" gradient="purple">
+                  <MDBIcon icon="home" size="2x" />
+                </MDBBtn>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBBtn floating size="lg" gradient="purple"><MDBIcon icon="address-card" /></MDBBtn>
+                <MDBBtn href="/students" gradient="purple">
+                  <MDBIcon icon="address-card" size="2x" />
+                </MDBBtn>
               </MDBNavItem>
             </MDBNav>
           </MDBCol>

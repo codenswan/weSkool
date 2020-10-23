@@ -1,11 +1,18 @@
-const Book = require('../models/Books');
+const Book = require('../models/Book');
+const Student = require('../models/Student');
 
 module.exports = {
   create: async (req, res) => {
     try {
-      const dbModel = await Book.create(req.body);
-      res.status(201).json(dbModel);
+      const {student_id, ...bookDetails} = req.body
+      const newBook = await Book.create(bookDetails);
+      console.log(newBook)
+      const student = await Student.findById(student_id);
+      student.saveBook(newBook);
+      
+      res.status(201).json(newBook);
     } catch (error) {
+      console.log(error)
       res.status(422).json(error);
     }
   },
