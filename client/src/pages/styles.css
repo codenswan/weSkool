@@ -7,6 +7,10 @@ button {
   text-transform: unset !important;
 }
 
+#studentBtns {
+  margin: auto;
+}
+
 .pageContainer {
   height: 100%;
   display: flex;

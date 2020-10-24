@@ -1,21 +1,23 @@
 import React from 'react';
-import { MDBBtnGroup, MDBCol, MDBContainer, MDBRow } from 'mdbreact';
+import { Button, Col, Layout, Row } from 'antd';
 import './styles.css';
 import LoginButton from '../components/LoginButton/LoginButton';
 import logo from './logo.png';
+import Header from './layout/Header/Header';
+import FooterPage from './layout/Footer/Footer';
 
 const Login = () => {
   return (
-      <MDBContainer className="pageContainer">
-        <MDBRow>
-          <MDBCol>
-            <MDBBtnGroup id="homeBtns" vertical>
+    <>
+      {/* <Header /> */}
+      <Layout className="pageContainer">
+
               <img src={logo} alt="homeschool logo" className="img-fluid" />
               <LoginButton>Login</LoginButton>
-            </MDBBtnGroup>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
+ 
+      </Layout>
+      {/* <FooterPage/> */}
+    </>
   );
 };
 

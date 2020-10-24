@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {
-  MDBBtn,
-  MDBBtnGroup,
-  MDBCol,
-  MDBContainer,
-  MDBIcon,
-  MDBRow,
-} from 'mdbreact';
 import { Link } from 'react-router-dom';
+import { Button, Col, Layout, Row, Space } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
 import API from '../utils/studentAPI';
+import './styles.css';
 
 const Students = () => {
   const [studentRoll, setStudentRoll] = useState([]);
@@ -27,26 +22,29 @@ const Students = () => {
   };
 
   return (
-    <MDBContainer
-      className="pageContainer d-flex justify-content-around"
-      id="studentsPage"
-    >
-      <MDBRow center>
+    <>
+      <Layout className="pageContainer" id="studentPage">
+        <Row>
           <div>Click on a student to create a new log</div>
-        <MDBCol xs="2">
-          <MDBBtnGroup vertical>
-            {studentRoll.map((student) => (
-              <Link to={`/students/log/${student._id}`} key={student._id}>
-                <MDBBtn>{student.name}</MDBBtn>
-              </Link>
-            ))}
-          </MDBBtnGroup>
-        </MDBCol>
-      </MDBRow>
-      <MDBBtn onClick={addStudentHandler}>
-        <MDBIcon icon="plus" size="2x" />
-      </MDBBtn>
-    </MDBContainer>
+          <Col>
+            <Space direction="vertical">
+              {studentRoll.map((student) => (
+                <Link to={`/students/log/${student._id}`} key={student._id}>
+                  <Button  type="primary" block id="studentBtns">
+                    {student.name}
+                  </Button>
+                </Link>
+              ))}
+            </Space>
+          </Col>
+        </Row>
+        <Button
+          type="primary"
+          icon={<PlusCircleOutlined />}
+          onClick={addStudentHandler}
+        ></Button>
+      </Layout>
+    </>
   );
 };
 
