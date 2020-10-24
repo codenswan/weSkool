@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Menu from './pages/Menu';
 import Students from './pages/Students';
-import Activities from './pages/Activities';
+import Activity from './pages/Activity';
 import Login from './pages/Login';
 import SearchBooks from './pages/SearchBooks';
 
@@ -22,7 +22,7 @@ const App = () => {
             component={SearchBooks}
           />
           <Route exact path="/students/log/activity/:student_id"
-            component={Activities} />
+            component={Activity} />
         </Switch>
       </div>
     </Router>
