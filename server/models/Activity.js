@@ -14,12 +14,8 @@ const ActivitySchema = new Schema({
     type: String,
     required: true,
   },
-  date: {
-    type: Date,
-    required: true,
-    default: Date.now,
-  },
-});
+}, {timestamps: true}
+);
 
 const Activity = mongoose.model('Activity', ActivitySchema);
 

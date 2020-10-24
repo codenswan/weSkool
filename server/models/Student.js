@@ -27,6 +27,12 @@ StudentSchema.methods.saveBook = function(book) {
   return this.save();
 }
 
+StudentSchema.methods.saveActivity = function(activity) {
+  const activityID = activity._id
+  this.activities.push(mongoose.Types.ObjectId(activityID))
+  return this.save();
+}
+
 const Student = mongoose.model('Student', StudentSchema);
 
 module.exports = Student;

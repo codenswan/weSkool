@@ -9,9 +9,9 @@ const SearchBooks = ({match}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [fetchedBooks, setFetchedBooks] = useState([]);
 
-  console.log(match);
+ 
   let { student_id } = useParams();
-  console.log(student_id);
+
 
   const searchGoogleBooksAPI = async (query) => {
     try {
@@ -38,7 +38,6 @@ const SearchBooks = ({match}) => {
 
   const handleSaveBtn = async (bookData) => {
     await booksAPI.saveBook({ ...bookData, student_id });
-    console.log(match.params.student_id);
   };
 
   return (
