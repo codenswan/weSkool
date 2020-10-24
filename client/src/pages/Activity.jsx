@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button, Container, Form } from 'react-bootstrap';
 import activityAPI from '../utils/activityAPI';
+import FileUploadButton from '../components/FileUploadButton/FileUploadButton';
 
 const Activity = () => {
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [subject, setSubject] = useState();
+  const [files, setFiles] = useState();
   // const [date]
 
   const inputHandler = (event) => {
@@ -25,50 +27,32 @@ const Activity = () => {
 
   let { student_id } = useParams();
 
+  const fileHandler = (event) => {
+    const files = event.target.files || event.dataTranser.files;
+
+    setFiles(files[0])
+    console.log(files);
+  }
   const submitNewActivity = async () => {
     // put everything to form data
     let form = new FormData();
-    for (let key in this.inputData) {
-      if (!this.inputData.hasOwnProperty(key)) continue;
-      switch (key) {
-        case 'attachments':
-          this.inputData[key].forEach(function (ii) {
-            form.append('attachments[]', ii);
-          });
-          break;
+    form.append('title', title);
+    form.append('description', description);
+    form.append('subject', subject);
 
-        default:
-          form.append(key, this.inputData[key]);
-      }
-    }
-    await activityAPI.saveActivity({ student_id, title, description, subject });
+    form.append(`photos`, files);
+    // for (let index = 0; index < files.length; index++) {
+    //   const file = files.item(index);
+      
+    // }
+    
+    
+    form.append('student_id', student_id);
+    
+    await activityAPI.saveActivity(form);
   };
 
-  // const imageUploadHandler = (event) => {
-  //   const formData = new FormData();
-  //   let files = e.target.files || e.dataTransfer.files;
-  //   // console.log(files);
-  //   let fileSizes = 0;
-  //   for (let index in files) {
-  //     if (!files.hasOwnProperty(index)) continue;
-  //     if (!isNaN(index)) {
-  //       this.items[index] =
-  //         e.target.files[index] || e.dataTransfer.files[index];
-  //       this.itemsNames[index] = files[index].name;
-  //       this.itemsSizes[index] = this.bytesToSize(files[index].size);
-  //       fileSizes += files[index].size;
-  //       this.formData.append('items[]', this.items);
-  //       this.itemSummaries[index] = {
-  //         item: this.items[index],
-  //         name: this.itemsNames[index],
-  //         size: this.itemsSizes[index],
-  //       };
-  //     }
-  //   }
-  //   this.itemsTotalSize = this.bytesToSize(fileSizes);
-  //   this.$emit('input', this.itemSummaries);
-  //   this.reset();
-  // };
+  
 
   return (
     <>
@@ -115,13 +99,7 @@ const Activity = () => {
               <option value="PDHPE">PDHPE</option>
             </Form.Control>
           </Form.Group>
-          <Form.Group>
-            <Form.File
-              id="custom-file"
-              label="Upload doc or photo"
-              // onChange={imageUploadHandler}
-            />
-          </Form.Group>
+          <FileUploadButton onChange={fileHandler}/>
         </Form>
         <Button onClick={submitNewActivity}>Log Activity</Button>
       </Container>

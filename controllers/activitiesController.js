@@ -3,9 +3,10 @@ const Student = require('../models/Student');
 
 module.exports = {
     create: async (req, res) => {
+        console.log(req.file, req.body)
         try {
             const {student_id, ...activityDetails} = req.body
-            const newActivity = await Activity.create(activityDetails);
+            const newActivity = await Activity.create({ ...activityDetails , photo: req.file.path});
             console.log(newActivity)
             const student = await Student.findById(student_id);
             student.saveActivity(newActivity);

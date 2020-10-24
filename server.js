@@ -6,6 +6,7 @@ const routes = require('./routes');
 
 //* middleware
 const app = express();
+app.use(express.static('public'))
 app.use([
   express.urlencoded({ extended: true }),
   express.json(),
