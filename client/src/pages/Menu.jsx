@@ -7,20 +7,15 @@ const Menu = ({ match }) => {
   let { student_id } = useParams();
   console.log(student_id);
   return (
-       <Container
-      className="pageContainer d-flex justify-content-around"
-      id="studentsPage"
-    >
+    <Container className="pageContainer">
       <Row center>
-        <Col xs="2">
-          <ButtonGroup vertical>
-            <Link to={`/students/log/book/${student_id}`}>
-              <Button>Log a new book</Button>
-            </Link>
-            <Link to={`/students/log/activity/${student_id}`}>
-            <Button >Log a new activity</Button>
-            </Link>
-          </ButtonGroup>
+        <Col>
+          <Link to={`/students/log/book/${student_id}`}>
+            <Button>Log a new book</Button>
+          </Link>
+          <Link to={`/students/log/activity/${student_id}`}>
+            <Button>Log a new activity</Button>
+          </Link>
         </Col>
       </Row>
     </Container>
