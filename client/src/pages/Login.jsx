@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Layout, Row } from 'antd';
+import { Container } from 'react-bootstrap';
 import './styles.css';
 import LoginButton from '../components/LoginButton/LoginButton';
 import logo from './logo.png';
@@ -10,12 +10,10 @@ const Login = () => {
   return (
     <>
       {/* <Header /> */}
-      <Layout className="pageContainer">
-
-              <img src={logo} alt="homeschool logo" className="img-fluid" />
-              <LoginButton>Login</LoginButton>
- 
-      </Layout>
+      <Container className="pageContainer">
+        <img src={logo} alt="homeschool logo" className="img-fluid" />
+        <LoginButton>Login</LoginButton>
+      </Container>
       {/* <FooterPage/> */}
     </>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDBContainer } from 'mdbreact';
 import { Button, ButtonGroup, Card, Container } from 'react-bootstrap';
 
 //* the books prop is passed down from both search and saved pages

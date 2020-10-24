@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Col, Layout, Row, Space } from 'antd';
-import { PlusCircleOutlined } from '@ant-design/icons';
+import { Button, Container } from 'react-bulma-components';
 import API from '../utils/studentAPI';
 import './styles.css';
 
@@ -23,27 +22,19 @@ const Students = () => {
 
   return (
     <>
-      <Layout className="pageContainer" id="studentPage">
-        <Row>
-          <div>Click on a student to create a new log</div>
-          <Col>
-            <Space direction="vertical">
-              {studentRoll.map((student) => (
-                <Link to={`/students/log/${student._id}`} key={student._id}>
-                  <Button  type="primary" block id="studentBtns">
-                    {student.name}
-                  </Button>
-                </Link>
-              ))}
-            </Space>
-          </Col>
-        </Row>
-        <Button
-          type="primary"
-          icon={<PlusCircleOutlined />}
-          onClick={addStudentHandler}
-        ></Button>
-      </Layout>
+      <Container className="pageContainer" id="studentPage">
+        <div>Click on a student to create a new log</div>
+
+        {studentRoll.map((student) => (
+          <Link to={`/students/log/${student._id}`} key={student._id}>
+            <Button type="primary" block id="studentBtns">
+              {student.name}
+            </Button>
+          </Link>
+        ))}
+
+        <Button onClick={addStudentHandler}></Button>
+      </Container>
     </>
   );
 };

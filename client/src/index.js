@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Auth0Provider } from "@auth0/auth0-react"; 
 import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
-import 'react-bulma-components/dist/react-bulma-components.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 ReactDOM.render(

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {useParams} from 'react-router-dom'
-import { MDBBtn, MDBCol, MDBContainer, MDBIcon } from 'mdbreact';
 import GAPI from '../utils/googleAPI';
 import booksAPI from '../utils/booksAPI';
 import BooksTable from '../components/BooksTable/BooksTable';
+import { Button, Col, Container } from 'react-bootstrap';
 
 const SearchBooks = ({match}) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -43,11 +43,11 @@ const SearchBooks = ({match}) => {
 
   return (
     <>
-      <MDBContainer className="pageContainer d-flex justify-content-around">
-        <MDBCol md="6">
+      <Container className="pageContainer d-flex justify-content-around">
+      
+
           <form className="form-inline mt-4 mb-4">
-            <MDBIcon icon="search" />
-            <input
+                       <input
               onChange={handleInputChange}
               value={searchTerm}
               className="form-control form-control-sm ml-3 w-75"
@@ -55,7 +55,7 @@ const SearchBooks = ({match}) => {
               placeholder="Search"
               aria-label="Search"
             />
-            <MDBBtn
+            <Button
               gradient="purple"
               rounded
               size="sm"
@@ -64,11 +64,11 @@ const SearchBooks = ({match}) => {
               onClick={handleFormSubmit}
             >
               Search
-            </MDBBtn>
+            </Button>
           </form>
-              </MDBCol>
+         
               <BooksTable handleSaveBtn={handleSaveBtn} books={fetchedBooks}/>
-      </MDBContainer>
+      </Container>
     </>
   );
 };

@@ -1,29 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { MDBBtn, MDBBtnGroup, MDBCol, MDBContainer, MDBRow } from 'mdbreact';
+import { Button, ButtonGroup, Col, Container, Row } from 'react-bootstrap';
 
 const Menu = ({ match }) => {
   console.log(match);
   let { student_id } = useParams();
   console.log(student_id);
   return (
-       <MDBContainer
+       <Container
       className="pageContainer d-flex justify-content-around"
       id="studentsPage"
     >
-      <MDBRow center>
-        <MDBCol xs="2">
-          <MDBBtnGroup vertical>
+      <Row center>
+        <Col xs="2">
+          <ButtonGroup vertical>
             <Link to={`/students/log/book/${student_id}`}>
-              <MDBBtn>Log a new book</MDBBtn>
+              <Button>Log a new book</Button>
             </Link>
             <Link to={`/students/log/activity/${student_id}`}>
-            <MDBBtn >Log a new activity</MDBBtn>
+            <Button >Log a new activity</Button>
             </Link>
-          </MDBBtnGroup>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+          </ButtonGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
