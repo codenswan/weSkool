@@ -13,8 +13,8 @@ const App = () => {
       <div>
   
         <Switch>
-          <Route exact path="/students" component={Students} />
           <Route exact path="/" component={Login} />
+          <Route exact path="/students" component={Students} />
           <Route exact path="/students/log/:student_id" component={Menu} />
           <Route
             exact
