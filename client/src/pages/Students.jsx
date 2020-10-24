@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Button, ButtonGroup, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Button, Container } from 'react-bulma-components';
 import API from '../utils/studentAPI';
 import './styles.css';
 
@@ -24,16 +24,16 @@ const Students = () => {
     <>
       <Container className="pageContainer" id="studentPage">
         <div>Click on a student to create a new log</div>
-
+        <ButtonGroup vertical>
         {studentRoll.map((student) => (
           <Link to={`/students/log/${student._id}`} key={student._id}>
-            <Button type="primary" block id="studentBtns">
-              {student.name}
-            </Button>
+            <Button id="studentBtns">{student.name}</Button>
           </Link>
         ))}
-
-        <Button onClick={addStudentHandler}></Button>
+      </ButtonGroup>
+        <Link to={`/students/new`}>
+          <Button onClick={addStudentHandler}>Add new student</Button>
+        </Link>
       </Container>
     </>
   );
