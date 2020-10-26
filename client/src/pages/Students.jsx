@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import StudentButtons from '../components/StudentButtons/StudentButtons';
 import API from '../utils/studentAPI';
+import FooterPage from './layout/Footer/Footer';
 import './styles.css';
 
 const Students = () => {
@@ -12,7 +14,7 @@ const Students = () => {
   }, []);
 
   const loadStudents = async () => {
-    const response = await API.getStudents();
+    const response = await API.getAllStudents();
     setStudentRoll(response.data);
   };
 
@@ -24,17 +26,12 @@ const Students = () => {
     <>
       <Container className="pageContainer" id="studentPage">
         <div>Click on a student to create a new log</div>
-        <ButtonGroup vertical>
-        {studentRoll.map((student) => (
-          <Link to={`/students/log/${student._id}`} key={student._id}>
-            <Button id="studentBtns">{student.name}</Button>
-          </Link>
-        ))}
-      </ButtonGroup>
+        <StudentButtons studentRoll={studentRoll}/>
         <Link to={`/students/new`}>
           <Button onClick={addStudentHandler}>Add new student</Button>
         </Link>
       </Container>
+      <FooterPage/>
     </>
   );
 };
