@@ -1,14 +1,16 @@
-const router = require("express").Router();
-const students = require("../../controllers/studentsController");
+const router = require('express').Router();
+const studentsController = require('../../controllers/studentsController');
 
 //* Matches with "/api/students"
-router.route("/")
-  .get(students.findAll)
-  .post(students.create);
+router.route('/')
+  .get(studentsController.findAll)
+  // .post(studentController.create);
 
 //* Matches with "/api/students/:id"
-// router.route("/:id")
-//   .get(students.findById)
+router
+  .route('/:id')
+  // .get(studentController.getAllActivity)
+  // .get(students.findById);
 //   .put(students.update)
 //   .delete(students.remove);
 
