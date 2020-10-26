@@ -17,7 +17,6 @@ const BooksTable = (props) => {
             </Card.Title>
             <Card.Text>Author: {book.Author}</Card.Text>
             <Card.Text>Desciption: {book.Description} </Card.Text>
-          </Card.Body>
           <ButtonGroup>
             {book._id ? (
               <div>
@@ -47,6 +46,7 @@ const BooksTable = (props) => {
               </div>
             )}
           </ButtonGroup>
+          </Card.Body>
         </Card>
       ))}
     </>

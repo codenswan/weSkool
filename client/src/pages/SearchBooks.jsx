@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import GAPI from '../utils/googleAPI';
 import booksAPI from '../utils/booksAPI';
 import BooksTable from '../components/BooksTable/BooksTable';
@@ -38,18 +39,18 @@ const SearchBooks = ({ match }) => {
 
   const handleSaveBtn = async (bookData) => {
     await booksAPI.saveBook({ ...bookData, student_id });
+    Swal.fire('Book has been saved!', '', 'success');
   };
 
   return (
     <>
       {/* className="pageContainer d-flex justify-content-around" */}
-        <StickySearchNav
-          onClick={handleFormSubmit}
-          value={searchTerm}
-          onChange={handleInputChange}
-        />
+      <StickySearchNav
+        onClick={handleFormSubmit}
+        value={searchTerm}
+        onChange={handleInputChange}
+      />
       <Container>
-
         <BooksTable handleSaveBtn={handleSaveBtn} books={fetchedBooks} />
       </Container>
       <FooterPage />
