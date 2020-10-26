@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, ButtonGroup, Card, Container } from 'react-bootstrap';
-import './BooksTable.css'
+import './BooksTable.css';
 
 //* the books prop is passed down from both search and saved pages
 const BooksTable = (props) => {
   return (
-    <Container >
+    <>
       {props.books.map((book) => (
         <Card key={book.ID}>
           <Card.Header>
@@ -49,7 +49,7 @@ const BooksTable = (props) => {
           </ButtonGroup>
         </Card>
       ))}
-    </Container>
+    </>
   );
 };
 

@@ -42,7 +42,8 @@ const SearchBooks = ({match}) => {
 
   return (
     <>
-      <Container className="pageContainer d-flex justify-content-around">
+      {/* className="pageContainer d-flex justify-content-around" */}
+      <Container >
       
 
           <form className="form-inline mt-4 mb-4">
