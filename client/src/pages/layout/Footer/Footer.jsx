@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, ButtonGroup, Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
 
 const FooterPage = () => {
   return (

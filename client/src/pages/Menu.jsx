@@ -9,7 +9,7 @@ const Menu = ({ match }) => {
   return (
     <Container className="pageContainer">
       <Row center>
-        <Col>
+        <Col vertical>
           <Link to={`/students/log/book/${student_id}`}>
             <Button>Log a new book</Button>
           </Link>
