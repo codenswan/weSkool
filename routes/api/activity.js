@@ -3,15 +3,15 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
  
 
-const activity = require("../../controllers/activitiesController");
+const activityController = require("../../controllers/activitiesController");
 
 //* Matches with "/api/activity"
 router.route("/")
-  .get(activity.findAll)
-  //.post(activity.create);
+  .get(activityController.findAll)
+  //.post(activityController.create);
   
 router
-  .post('/', upload.single('photos'), activity.create);
+  .post('/', upload.single('photos'), activityController.create);
 
 //* Matches with "/api/activity/:id"
 // router.route("/:id")
