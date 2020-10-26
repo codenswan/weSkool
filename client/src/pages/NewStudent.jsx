@@ -2,8 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import studentAPI from '../utils/studentAPI';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import './styles.css';
+import Footer from './layout/Footer/Footer';
 
 const NewStudent = () => {
   const [name, setName] = useState();
@@ -11,14 +12,15 @@ const NewStudent = () => {
   const [grade, setGrade] = useState();
 
   const addNewStudent = async () => {
-      await studentAPI.createNewStudent({ name, age, grade });
+    await studentAPI.createNewStudent({ name, age, grade });
+    Swal.fire('New Student has been added', '', 'success');
 
-      Swal.fire('New Student has been added', '', 'success')
-
-      setName("");
-      setAge("");
-      setGrade("");
-
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
+    setName('');
+    setAge('');
+    setGrade('');
   };
 
   const inputHandler = (event) => {
@@ -71,6 +73,7 @@ const NewStudent = () => {
         </Form>
         <Button onClick={addNewStudent}>Create New Student</Button>
       </Container>
+      <Footer/>
     </>
   );
 };

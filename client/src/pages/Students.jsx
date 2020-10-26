@@ -3,7 +3,7 @@ import { Button, ButtonGroup, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import StudentButtons from '../components/StudentButtons/StudentButtons';
 import API from '../utils/studentAPI';
-import FooterPage from './layout/Footer/Footer';
+import Footer from './layout/Footer/Footer';
 import './styles.css';
 
 const Students = () => {
@@ -18,8 +18,6 @@ const Students = () => {
     setStudentRoll(response.data);
   };
 
-  
-  
   return (
     <>
       <Container className="pageContainer" id="studentPage">
@@ -29,7 +27,7 @@ const Students = () => {
           <Button>Add new student</Button>
         </Link>
       </Container>
-      <FooterPage/>
+      <Footer/>
     </>
   );
 };

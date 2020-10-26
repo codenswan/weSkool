@@ -5,6 +5,7 @@ import activityAPI from '../utils/activityAPI';
 import FileUploadButton from '../components/FileUploadButton/FileUploadButton';
 import Swal from 'sweetalert2'
 import './styles.css';
+import Footer from './layout/Footer/Footer';
 
 const Activity = () => {
   const [title, setTitle] = useState();
@@ -44,9 +45,11 @@ const Activity = () => {
     form.append(`photos`, files);
 
     await activityAPI.saveActivity(form);
-
     Swal.fire('New activity has been logged!', '', 'success')
 
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
     setTitle('');
     setDescription('');
     setSubject('');
@@ -101,6 +104,7 @@ const Activity = () => {
         </Form>
         <Button onClick={submitNewActivity}>Log Activity</Button>
       </Container>
+      <Footer/>
     </>
   );
 };

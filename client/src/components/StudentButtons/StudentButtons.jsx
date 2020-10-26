@@ -7,7 +7,7 @@ const StudentButtons = (props) => {
     <ButtonGroup vertical>
       {props.studentRoll.map((student) => (
         <Link to={`/students/log/${student._id}`} key={student._id}>
-          <Button id="studentBtns">{student.name}</Button>
+          <Button block id="studentBtns">{student.name}</Button>
         </Link>
       ))}
     </ButtonGroup>

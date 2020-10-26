@@ -6,7 +6,7 @@ import booksAPI from '../utils/booksAPI';
 import BooksTable from '../components/BooksTable/BooksTable';
 import { Button, Col, Container } from 'react-bootstrap';
 import FooterPage from './layout/Footer/Footer';
-import StickySearchNav from '../components/StickySearchNav';
+import StickySearchNav from '../components/StickySearchNav/StickySearchNav';
 
 const SearchBooks = ({ match }) => {
   const [searchTerm, setSearchTerm] = useState('');
