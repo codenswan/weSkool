@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Button, Container, Form } from 'react-bootstrap';
 import activityAPI from '../utils/activityAPI';
 import FileUploadButton from '../components/FileUploadButton/FileUploadButton';
+import './styles.css';
 
 const Activity = () => {
   const [title, setTitle] = useState();
@@ -29,9 +30,9 @@ const Activity = () => {
 
   const fileHandler = (event) => {
     const files = event.target.files || event.dataTranser.files;
-    setFiles(files[0])
+    setFiles(files[0]);
     console.log(files);
-  }
+  };
   const submitNewActivity = async () => {
     //* put everything to form data
     let form = new FormData();
@@ -39,17 +40,10 @@ const Activity = () => {
     form.append('description', description);
     form.append('subject', subject);
     form.append('student_id', student_id);
-
     form.append(`photos`, files);
-    // for (let index = 0; index < files.length; index++) {
-    //   const file = files.item(index);
-      
-    // }
-    
+
     await activityAPI.saveActivity(form);
   };
-
-  
 
   return (
     <>
@@ -96,7 +90,7 @@ const Activity = () => {
               <option value="PDHPE">PDHPE</option>
             </Form.Control>
           </Form.Group>
-          <FileUploadButton onChange={fileHandler}/>
+          <FileUploadButton onChange={fileHandler} />
         </Form>
         <Button onClick={submitNewActivity}>Log Activity</Button>
       </Container>

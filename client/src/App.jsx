@@ -6,6 +6,7 @@ import Students from './pages/Students';
 import Activity from './pages/Activity';
 import Login from './pages/Login';
 import SearchBooks from './pages/SearchBooks';
+import NewStudent from './pages/NewStudent';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           />
           <Route exact path="/students/log/activity/:student_id"
             component={Activity} />
+          <Route exact path="/students/new" component={NewStudent} />
         </Switch>
       </div>
     </Router>

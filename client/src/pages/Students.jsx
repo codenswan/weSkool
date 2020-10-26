@@ -18,17 +18,15 @@ const Students = () => {
     setStudentRoll(response.data);
   };
 
-  const addStudentHandler = async () => {
-    console.log('the button works');
-  };
-
+  
+  
   return (
     <>
       <Container className="pageContainer" id="studentPage">
         <div>Click on a student to create a new log</div>
         <StudentButtons studentRoll={studentRoll}/>
         <Link to={`/students/new`}>
-          <Button onClick={addStudentHandler}>Add new student</Button>
+          <Button>Add new student</Button>
         </Link>
       </Container>
       <FooterPage/>

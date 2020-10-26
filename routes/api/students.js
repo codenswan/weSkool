@@ -4,7 +4,7 @@ const studentsController = require('../../controllers/studentsController');
 //* Matches with "/api/students"
 router.route('/')
   .get(studentsController.findAll)
-  // .post(studentController.create);
+  .post(studentsController.create);
 
 //* Matches with "/api/students/:id"
 router

@@ -6,9 +6,9 @@ export default {
     return axios.get('/api/students');
   },
   //* Saves a student to the database
-  // saveBook: (bookData) => {
-  //   return axios.post('/api/students', bookData);
-  // },
+  createNewStudent: (studentInfo) => {
+    return axios.post('/api/students', studentInfo);
+  },
   //* get all student activity
   getStudentActivity: (id) => {
     return axios.get('/api/students/activities' + id)

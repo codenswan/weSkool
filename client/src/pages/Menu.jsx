@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Button, ButtonGroup, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 
-const Menu = ({ match }) => {
-  console.log(match);
+const Menu = () => {
+
   let { student_id } = useParams();
-  console.log(student_id);
+
   return (
     <Container className="pageContainer">
       <Row center>
