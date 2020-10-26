@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Button, Container, Form } from 'react-bootstrap';
 import activityAPI from '../utils/activityAPI';
 import FileUploadButton from '../components/FileUploadButton/FileUploadButton';
+import Swal from 'sweetalert2'
 import './styles.css';
 
 const Activity = () => {
@@ -43,6 +44,12 @@ const Activity = () => {
     form.append(`photos`, files);
 
     await activityAPI.saveActivity(form);
+
+    Swal.fire('New activity has been logged!', '', 'success')
+
+    setTitle('');
+    setDescription('');
+    setSubject('');
   };
 
   return (

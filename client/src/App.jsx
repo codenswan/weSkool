@@ -9,12 +9,6 @@ import SearchBooks from './pages/SearchBooks';
 import NewStudent from './pages/NewStudent';
 
 const App = () => {
-  // useEffect(() => {
-  //   console.log('is this running');
-  //   if (window.location.protocol === 'http:') {
-  //     window.location.href = 'https://' + window.location.host;
-  //   }
-  // }, []);
 
   return (
     <Router>

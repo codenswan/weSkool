@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import GAPI from '../utils/googleAPI';
 import booksAPI from '../utils/booksAPI';
 import BooksTable from '../components/BooksTable/BooksTable';
 import { Button, Col, Container } from 'react-bootstrap';
+import FooterPage from './layout/Footer/Footer';
+import StickySearchNav from '../components/StickySearchNav';
 
-const SearchBooks = ({match}) => {
+const SearchBooks = ({ match }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [fetchedBooks, setFetchedBooks] = useState([]);
 
- 
   let { student_id } = useParams();
-
 
   const searchGoogleBooksAPI = async (query) => {
     try {
@@ -31,8 +31,8 @@ const SearchBooks = ({match}) => {
   };
 
   const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      console.log('submit button works');
+    event.preventDefault();
+    console.log('submit button works');
     searchGoogleBooksAPI(searchTerm);
   };
 
@@ -43,32 +43,16 @@ const SearchBooks = ({match}) => {
   return (
     <>
       {/* className="pageContainer d-flex justify-content-around" */}
-      <Container >
-      
+        <StickySearchNav
+          onClick={handleFormSubmit}
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
+      <Container>
 
-          <form className="form-inline mt-4 mb-4">
-                       <input
-              onChange={handleInputChange}
-              value={searchTerm}
-              className="form-control form-control-sm ml-3 w-75"
-              type="text"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <Button
-              gradient="purple"
-              rounded
-              size="sm"
-              type="submit"
-              className="mr-auto"
-              onClick={handleFormSubmit}
-            >
-              Search
-            </Button>
-          </form>
-         
-              <BooksTable handleSaveBtn={handleSaveBtn} books={fetchedBooks}/>
+        <BooksTable handleSaveBtn={handleSaveBtn} books={fetchedBooks} />
       </Container>
+      <FooterPage />
     </>
   );
 };

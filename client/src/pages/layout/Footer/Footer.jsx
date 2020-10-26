@@ -6,7 +6,6 @@ import HomeIcon from '@material-ui/icons/Home';
 const FooterPage = () => {
   return (
     <Container>
-
     <Navbar bg="dark" fixed="bottom">
         <ButtonGroup>
           <Link to="/">
