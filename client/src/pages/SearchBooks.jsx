@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import GAPI from '../utils/googleAPI';
 import booksAPI from '../utils/booksAPI';
 import BooksTable from '../components/BooksTable/BooksTable';
-import { Button, Col, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import FooterPage from './layout/Footer/Footer';
 import StickySearchNav from '../components/StickySearchNav/StickySearchNav';
 import Authenticated from './layout/Authenticated/Authenticated';

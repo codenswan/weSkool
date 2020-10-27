@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, FormControl, InputGroup, Navbar } from 'react-bootstrap';
+import { FormControl, InputGroup, Navbar } from 'react-bootstrap';
 
 const StickySearchNav = (props) => {
   return (
