@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import GAPI from '../utils/googleAPI';
@@ -8,10 +8,12 @@ import { Button, Col, Container } from 'react-bootstrap';
 import FooterPage from './layout/Footer/Footer';
 import StickySearchNav from '../components/StickySearchNav/StickySearchNav';
 import Authenticated from './layout/Authenticated/Authenticated';
+import useDebounce from '../utils/debounceHook';
 
 const SearchBooks = ({ match }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [fetchedBooks, setFetchedBooks] = useState([]);
+  const [error, setError] = useState('');
 
   let { student_id } = useParams();
 
@@ -26,16 +28,36 @@ const SearchBooks = ({ match }) => {
       console.log(error);
     }
   };
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  useEffect(() => {
+    if (!searchTerm) {
+      return;
+    }
+
+    if (debouncedSearchTerm) {
+      searchGoogleBooksAPI(searchTerm)
+        .then((res) => {
+          if (res.data.length === 0) {
+            throw new Error('No results found.');
+          }
+          if (res.data.status === 'error') {
+            throw new Error(res.data.message);
+          }
+        })
+        .catch((err) => setError(err));
+    }
+  }, [debouncedSearchTerm]);
 
   const handleInputChange = (event) => {
     const value = event.target.value.toLowerCase();
     setSearchTerm(value);
-    searchGoogleBooksAPI(searchTerm);
+    // searchGoogleBooksAPI(searchTerm);
   };
 
   // const handleFormSubmit = async (event) => {
   //   event.preventDefault();
-   
+
   //   searchGoogleBooksAPI(searchTerm);
   // };
 
@@ -46,8 +68,6 @@ const SearchBooks = ({ match }) => {
 
   return (
     <Authenticated>
-
-      {/* className="pageContainer d-flex justify-content-around" */}
       <StickySearchNav
         // onClick={handleFormSubmit}
         value={searchTerm}
@@ -58,8 +78,6 @@ const SearchBooks = ({ match }) => {
       </Container>
       <FooterPage />
     </Authenticated>
-    
-    
   );
 };
 
