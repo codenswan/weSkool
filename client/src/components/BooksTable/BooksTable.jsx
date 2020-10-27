@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup, Card, Container } from 'react-bootstrap';
-import './booksTable.css';
+// import './booksTable.css';
 
 //* the books prop is passed down from both search and saved pages
 const BooksTable = (props) => {
