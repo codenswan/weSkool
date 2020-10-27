@@ -7,11 +7,11 @@ const StudentButtons = (props) => {
 
 
   const studentBtns = {
-    marginBottom: '5px',
+    marginBottom: '10px',
     width: '100px'
   }
     return (
-    <ButtonGroup vertical>
+    <ButtonGroup className="justify-content-around" vertical>
       {props.studentRoll.map((student) => (
         <Link to={`/students/log/${student._id}`} key={student._id}>
           <Button style={studentBtns} block >{student.name}</Button>
