@@ -7,7 +7,7 @@ import LogoutButton from '../../../components/LogoutButton/LogoutButton';
 const Header = () => {
   return (
     <>
-      <Navbar id="headerNav" bg="black" variant="dark">
+      <Navbar id="headerNav" bg="dark" variant="dark" fixed="top">
         <img width="30" height="30" id="headerLogo" src={logo} />
       </Navbar>
     </>
