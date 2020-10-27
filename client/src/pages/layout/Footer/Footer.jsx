@@ -5,6 +5,7 @@ import axios from 'axios';
 import { deepPurple } from '@material-ui/core/colors';
 import HomeIcon from '@material-ui/icons/Home';
 import TagFacesIcon from '@material-ui/icons/TagFaces';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import './footer.css';
 
 const Footer = () => {
@@ -33,7 +34,7 @@ const Footer = () => {
         </Nav.Item>
         <Nav.Item>
           <div href="/api/logout" onClick={loggedOut}>
-            Logout icon
+           <ExitToAppIcon style={{ color: deepPurple[500], fontSize: 40 }}/>
           </div>
         </Nav.Item>
       </Navbar>
