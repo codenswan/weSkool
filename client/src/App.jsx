@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Menu from './pages/Menu/Menu';
 import Students from './pages/Students/Students';
-import Activity from './pages/Activity';
+import Activity from './pages/Activity/Activity';
 import Login from './pages/Login/Login';
 import SearchBooks from './pages/SearchBooks';
 import NewStudent from './pages/NewStudent';
