@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
 import Menu from './pages/Menu';
 import Students from './pages/Students';
 import Activity from './pages/Activity';
 import Login from './pages/Login';
 import SearchBooks from './pages/SearchBooks';
 import NewStudent from './pages/NewStudent';
+import Register from './pages/Register';
 
 const App = () => {
-
   return (
     <Router>
       <div>
         <Switch>
           <Route exact path="/" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route exact path="/students" component={Students} />
           <Route exact path="/students/log/:student_id" component={Menu} />
           <Route

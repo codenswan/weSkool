@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Auth0Provider } from "@auth0/auth0-react"; 
+import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +14,7 @@ ReactDOM.render(
   <Auth0Provider
     domain="dev-xzphn2km.au.auth0.com"
     clientId="lYMTJ5wfVz7vFi3TBkKi4a4lnfaoWsOb"
-    redirectUri={window.location.origin}
+    redirectUri={`${window.location.origin}/students`}
   >
     <App />
   </Auth0Provider>,

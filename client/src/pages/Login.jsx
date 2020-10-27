@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import './styles.css';
-import LoginButton from '../components/LoginButton/LoginButton';
-import logo from './logo.png';
-import Header from './layout/Header/Header';
-import FooterPage from './layout/Footer/Footer';
+// import LoginButton from '../components/LoginButton/LoginButton';
+// import logo from './logo.png';
+import logo from './weSkool.gif'
+import LoginForm from '../containers/home/LoginForm'
 
 const Login = () => {
   return (
@@ -12,7 +12,11 @@ const Login = () => {
       {/* <Header /> */}
       <Container className="pageContainer">
         <img src={logo} alt="homeschool logo" className="img-fluid" />
-        <LoginButton>Login</LoginButton>
+        <LoginForm/>
+        
+        
+        
+        {/* <LoginButton>Login</LoginButton> */}
       </Container>
       {/* <FooterPage/> */}
     </>

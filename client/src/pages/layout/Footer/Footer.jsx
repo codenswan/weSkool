@@ -8,14 +8,14 @@ const Footer = () => {
     <Container>
       <Navbar className="justify-content-around" bg="dark" fixed="bottom">
         <Nav.Item>
-          <Nav.Link to="/">
+          <Link to="/">
            Home Icon 
-          </Nav.Link>
+          </Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link to="/students">
+          <Link to="/students">
             Students
-          </Nav.Link>
+          </Link>
         </Nav.Item>
       </Navbar>
     </Container>
