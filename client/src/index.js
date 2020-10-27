@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-if (window.location.hostname != "localhost" && window.location.protocol === 'http:' ) {
+if (window.location.hostname !== "localhost" && window.location.protocol === 'http:' ) {
   window.location.href = 'https://' + window.location.host;
 }
 
