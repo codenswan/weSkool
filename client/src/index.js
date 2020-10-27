@@ -6,9 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-// if (window.location.protocol === 'http:') {
-//   window.location.href = 'https://' + window.location.host;
-// }
+if (window.location.protocol === 'http:') {
+  window.location.href = 'https://' + window.location.host;
+}
 
 //* boiler plate for Auth0
 // import { Auth0Provider } from '@auth0/auth0-react';
