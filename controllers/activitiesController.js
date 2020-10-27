@@ -1,5 +1,5 @@
-const ActivityModel = require('../models/Activity');
-const StudentModel = require('../models/Student');
+const ActivityModel = require('../models/ActivityModel');
+const StudentModel = require('../models/StudentModel');
 
 module.exports = {
     create: async (req, res) => {

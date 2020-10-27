@@ -1,5 +1,5 @@
-const BookModel = require('../models/Book');
-const StudentModel = require('../models/Student');
+const BookModel = require('../models/BookModel');
+const StudentModel = require('../models/StudentModel');
 
 module.exports = {
   create: async (req, res) => {
