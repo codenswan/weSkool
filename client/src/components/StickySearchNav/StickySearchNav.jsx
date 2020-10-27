@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, Form, FormControl, Navbar } from 'react-bootstrap';
+import { Button, FormControl, InputGroup, Navbar } from 'react-bootstrap';
 
 const StickySearchNav = (props) => {
   return (
-    <Navbar bg="dark" variant="dark" sticky="top">
-      <Form inline>
+    <Navbar sticky="top">
+      <InputGroup>
         <FormControl
           onChange={props.onChange}
           value={props.value}
@@ -12,7 +12,8 @@ const StickySearchNav = (props) => {
           type="text"
           placeholder="Search"
         />
-        <Button
+        {/* <InputGroup.Append>
+        {/* <Button
           size="sm"
           type="submit"
        
@@ -20,7 +21,9 @@ const StickySearchNav = (props) => {
         >
           Search
         </Button>
-      </Form>
+        </InputGroup.Append> */}
+       
+      </InputGroup> 
     </Navbar>
   );
 };

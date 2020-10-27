@@ -63,12 +63,10 @@ function SignupForm() {
 
         // call api to login
         const response = axios
-            .post("http://localhost:3001/api/register", payload, {
+            .post('/api/register', payload, {
                 withCredentials: true,
-                headers: {"Access-Control-Allow-Origin": "*"}
             })
             .then((res) => {
-                res.header('Access-Control-Allow-Origin', '*');
                 history.push("/students")
             })
             .catch((err) => {

@@ -7,6 +7,7 @@ import BooksTable from '../components/BooksTable/BooksTable';
 import { Button, Col, Container } from 'react-bootstrap';
 import FooterPage from './layout/Footer/Footer';
 import StickySearchNav from '../components/StickySearchNav/StickySearchNav';
+import Authenticated from './layout/Authenticated/Authenticated';
 
 const SearchBooks = ({ match }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,13 +30,14 @@ const SearchBooks = ({ match }) => {
   const handleInputChange = (event) => {
     const value = event.target.value.toLowerCase();
     setSearchTerm(value);
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log('submit button works');
     searchGoogleBooksAPI(searchTerm);
   };
+
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+   
+  //   searchGoogleBooksAPI(searchTerm);
+  // };
 
   const handleSaveBtn = async (bookData) => {
     await booksAPI.saveBook({ ...bookData, student_id });
@@ -43,10 +45,11 @@ const SearchBooks = ({ match }) => {
   };
 
   return (
-    <>
+    <Authenticated>
+
       {/* className="pageContainer d-flex justify-content-around" */}
       <StickySearchNav
-        onClick={handleFormSubmit}
+        // onClick={handleFormSubmit}
         value={searchTerm}
         onChange={handleInputChange}
       />
@@ -54,7 +57,9 @@ const SearchBooks = ({ match }) => {
         <BooksTable handleSaveBtn={handleSaveBtn} books={fetchedBooks} />
       </Container>
       <FooterPage />
-    </>
+    </Authenticated>
+    
+    
   );
 };
 

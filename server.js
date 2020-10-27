@@ -7,8 +7,6 @@ const session = require('express-session');
 const MongoStore = require("connect-mongo")(session);
 const dotenv = require('dotenv')
 
-// const corsConfig = require('./config/cors');
-
 const connectDatabase = require("./config/database");
 const routes = require('./routes');
 
@@ -24,7 +22,7 @@ app.use([
   compression(),
   logger('dev'),
   cookieParser(process.env.SESSION_SECRET),
-  // cors(corsConfig)
+
 ]);
 
 app.use(
