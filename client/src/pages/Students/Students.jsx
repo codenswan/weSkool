@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup, Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import StudentButtons from '../components/StudentButtons/StudentButtons';
-import API from '../utils/studentAPI';
-import Footer from './layout/Footer/Footer';
-import Header from './layout/Header/Header';
-import './styles.css';
+import StudentButtons from '../../components/StudentButtons/StudentButtons';
+import API from '../../utils/studentAPI';
+import Footer from './../layout/Footer/Footer';
+import Header from './../layout/Header/Header';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import './students.css';
 
 const Students = () => {
   const [studentRoll, setStudentRoll] = useState([]);
@@ -22,11 +23,11 @@ const Students = () => {
   return (
     <>
       <Header/>
-      <Container className="pageContainer">
+      <Container className="studentContainer">
         <div>Click on a student to create a new log</div>
         <StudentButtons studentRoll={studentRoll}/>
-        <Link to={`/students/new`}>
-          <Button>Add new student</Button>
+        <Link to={`/students/new`} component={Button}>
+          <PersonAddIcon fontSize="large"/>
         </Link>
       </Container>
       <Footer/>

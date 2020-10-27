@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Menu from './pages/Menu';
-import Students from './pages/Students';
+import Students from './pages/Students/Students';
 import Activity from './pages/Activity';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import SearchBooks from './pages/SearchBooks';
 import NewStudent from './pages/NewStudent';
 import Register from './pages/Register';
