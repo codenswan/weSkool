@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup, Card } from 'react-bootstrap';
-// import './booksTable.css';
+import './booksTable.css';
 
 //* the books prop is passed down from both search and saved pages
 const BooksTable = (props) => {
@@ -12,7 +12,7 @@ const BooksTable = (props) => {
   return (
     <>
       {props.books.map((book) => (
-        <Card style={cardStyles} key={book.ID}>
+        <Card id="bookCard" key={book.ID}>
           <Card.Header>
             <Card.Img src={book.Image} style={{ width: '10rem' }} />
           </Card.Header>

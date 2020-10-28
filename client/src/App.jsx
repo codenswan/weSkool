@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import GlobalStore from './utils/context/GlobalStore';
 import Menu from './pages/Menu/Menu';
 import Students from './pages/Students/Students';
 import Activity from './pages/Activity/Activity';
@@ -7,7 +8,8 @@ import Login from './pages/Login/Login';
 import SearchBooks from './pages/SearchBooks';
 import NewStudent from './pages/NewStudent';
 import Register from './pages/Register';
-import GlobalStore from './utils/context/GlobalStore';
+import ViewBooks from './pages/ViewBooks/ViewBooks';
+import ViewActivities from './pages/ViewActivities/ViewActivities';
 
 const App = () => {
 
@@ -30,6 +32,8 @@ const App = () => {
             component={Activity}
           />
           <Route exact path="/students/new" component={NewStudent} />
+          <Route exact path="/students/viewbooks/:student_id" component={ViewBooks} />
+          <Route exact path="/students/viewactivities/:student_id" component={ViewActivities} />
         </Switch>
       </GlobalStore.GlobalProvider>
     </Router>

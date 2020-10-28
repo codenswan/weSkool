@@ -26,10 +26,23 @@ module.exports = {
       res.status(422).json(error);
     }
   },
-  // getAllActivity: async (req, res) => {
-  //   let studentActivities = await StudentModel.findById(req.params.id).populate(
-  //     'activities'
-  //   );
-  //   res.json(studentActivities);
-  // },
+  getAllBooks: async (req, res) => {
+    try {
+      const studentBooks = await StudentModel.findById(req.params.id).populate(
+        'books'
+      );
+      res.status(200).json(studentBooks);
+    } catch (error) {
+      res.status(422).json(error);
+    }
+  },
+  getAllActivities: async (req, res) => {
+    try {
+      let studentActivities = await StudentModel.findById(req.params.id
+      ).populate('activities');
+      res.status(200).json(studentActivities);
+    } catch (error) {
+      res.status(422).json(error);
+    }
+  },
 };
