@@ -31,13 +31,32 @@ Visit the live heroku site [wehomeskool.herokuapp.com](https://wehomeskool.herok
 Front end
 ```
 "axios": "^0.20.0",
-    "bootstrap": "^4.5.3",
-    "lodash": "^4.17.20",
-    "react": "^16.14.0",
-    "react-bootstrap": "^1.4.0",
-    "react-dom": "^16.14.0",
-    "react-icons": "^3.11.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.4",
-    "sweetalert2": "^10.8.1"
+"bootstrap": "^4.5.3",
+"lodash": "^4.17.20",
+"react": "^16.14.0",
+"react-bootstrap": "^1.4.0",
+"react-dom": "^16.14.0",
+"react-icons": "^3.11.0",
+"react-router-dom": "^5.2.0",
+"react-scripts": "^3.4.4",
+"sweetalert2": "^10.8.1"
+```
+Back end
+```
+"axios": "^0.20.0",
+"bcrypt": "^5.0.0",
+"compression": "^1.7.4",
+"connect-mongo": "^3.2.0",
+"cookie-parser": "^1.4.5",
+"dotenv": "^8.2.0",
+"express": "^4.17.1",
+"express-session": "^1.17.1",
+"lodash": "^4.17.20",
+"mongoose": "^5.10.9",
+"morgan": "^1.10.0",
+"multer": "^1.4.2",
+"passport": "^0.4.1",
+"passport-local": "^1.0.0",
+"passport-local-mongoose": "^6.0.1",
+"validator": "^13.1.17"
 ```
