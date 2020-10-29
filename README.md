@@ -13,3 +13,15 @@ This project was developed by [codenswan](https://github.com/codenswan).
 * [Contribution](#Contribution)
 * [Tests](#Tests)
 * [Questions](#Questions)
+
+## Description:
+Home school teachers can keep a track of students work and document it with uploads that 
+
+
+## Installation:
+To run locally copy the repository and run the following in the command line:
+    npm install
+
+## Usage
+Visit the live heroku site [here]()
+
