@@ -28,4 +28,16 @@ Visit the live heroku site [wehomeskool.herokuapp.com](https://wehomeskool.herok
 
 
 ## Dependencies
-`nodemon`
+Front end
+```
+"axios": "^0.20.0",
+    "bootstrap": "^4.5.3",
+    "lodash": "^4.17.20",
+    "react": "^16.14.0",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.14.0",
+    "react-icons": "^3.11.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "sweetalert2": "^10.8.1"
+```
