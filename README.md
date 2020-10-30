@@ -20,7 +20,7 @@ This is mobile first PWA allows home school teachers can keep a track of student
 First make sure that you have MongoDB and Node.js installed. Then to run the app locally clone the repository and cd to the relevant direcotry and run the command: npm install.
 
 ## Usage
-Visit the live heroku site [wehomeskool.herokuapp.com](https://wehomeskool.herokuapp.com/) on your mobile phone for best experience or to run locally use the command npm start.
+Visit the live heroku site [wehomeskool.herokuapp.com](https://wehomeskool.herokuapp.com/) on your mobile phone for best experience or to run locally use the command npm start. First time users will need to create an account and login. Then user can select a student view their records as well as log new books and activities.
 
 <img src="Screen%20Shot%202020-10-29%20at%206.28.26%20pm.png" height="450"/>
 
