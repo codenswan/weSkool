@@ -28,7 +28,7 @@ Visit the live heroku site [wehomeskool.herokuapp.com](https://wehomeskool.herok
 
 
 ## Dependencies
-Front end
+Front end (client directory)
 ```
 "axios": "^0.20.0",
 "bootstrap": "^4.5.3",
@@ -41,7 +41,7 @@ Front end
 "react-scripts": "^3.4.4",
 "sweetalert2": "^10.8.1"
 ```
-Back end
+Back end (root directory)
 ```
 "axios": "^0.20.0",
 "bcrypt": "^5.0.0",
