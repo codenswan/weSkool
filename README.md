@@ -10,9 +10,6 @@ This project was developed by [codenswan](https://github.com/codenswan).
 * [Usage](#Usage)
 * [Technologies](#Technologies)
 * [Dependencies](#Dependencies)
-* [License](#License)
-* [Contribution](#Contribution)
-* [Tests](#Tests)
 * [Questions](#Questions)
 
 ## Description:
@@ -25,6 +22,7 @@ First make sure that you have MongoDB and Node.js installed. Then to run the app
 ## Usage
 Visit the live heroku site [wehomeskool.herokuapp.com](https://wehomeskool.herokuapp.com/) on your mobile phone for best experience or to run locally use the command npm start.
 
+<img src="Screen%20Shot%202020-10-29%20at%206.28.26%20pm.png width="650"/>"
 
 
 ## Dependencies
