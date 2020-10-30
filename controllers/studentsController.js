@@ -38,8 +38,8 @@ module.exports = {
   },
   getAllActivities: async (req, res) => {
     try {
-      let studentActivities = await StudentModel.findById(req.params.id
-      ).populate('activities');
+      let studentActivities = await StudentModel.findOne({ _id: req.params.id })
+      await studentActivities.populate('activities').execPopulate();
       res.status(200).json(studentActivities);
     } catch (error) {
       res.status(422).json(error);

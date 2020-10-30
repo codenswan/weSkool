@@ -23,6 +23,7 @@ const Students = () => {
   return (
     <Authenticated>
       <Container className="studentContainer">
+        <h1 id="bannerText">weSkool</h1>
         <div>Click on a student to create a new log</div>
         <StudentButtons studentRoll={studentRoll}/>
         <Link to={`/students/new`} component={Button}>

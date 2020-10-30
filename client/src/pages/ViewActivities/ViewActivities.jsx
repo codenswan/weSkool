@@ -12,7 +12,7 @@ const ViewActivities = ({ match }) => {
   const getAllStudentActivties = async () => {
     let student_id = match.params.student_id;
     const allActivities = await StudentAPI.getStudentActivities(student_id);
-    setStudentActivities(allActivities.data.activities);
+      setStudentActivities(allActivities.data.activities);
   };
 
     return (

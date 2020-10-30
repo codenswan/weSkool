@@ -11,14 +11,22 @@ router
 router
   .route('/:id')
   .get(studentsController.findById)
-  .get(studentsController.getAllBooks)
-  .get(studentsController.getAllActivities);
+
 
 //* Matches with "/api/students/books/:id"
-router.route('/books/:id');
+router.route('/books/:id')
+.get(studentsController.getAllBooks)
+
+const Student = require("./../../models/StudentModel")
+router.get('/playground/:id', async (req, res) => {
+  const student = await Student.findOne({ _id: req.params.id })
+  await student.populate('activities').execPopulate();
+  res.json(student)
+
+})
 
 //* Matches with "/api/students/activities/:id"
-router.route('/activities/:id').get(studentsController.getAllBooks);
+router.route('/activities/:id').get(studentsController.getAllActivities);
 // .get(studentController.getAllActivity)
 //   .put(students.update)
 //   .delete(students.remove);
