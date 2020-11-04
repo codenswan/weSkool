@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Button, ButtonGroup, Container } from 'react-bootstrap';
-import './menu.css';
+// import './menu.css';
 import Footer from '../layout/Footer/Footer';
 import Authenticated from '../layout/Authenticated/Authenticated';
 
