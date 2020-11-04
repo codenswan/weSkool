@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
 import ActivitiesTable from '../../components/ActivitiesTable/ActivitiesTable';
 import StudentAPI from '../../utils/studentAPI';
+import Authenticated from '../layout/Authenticated/Authenticated';
+import './viewActivities.css'
 
 const ViewActivities = ({ match }) => {
   const [studentActivities, setStudentActivities] = useState([]);
@@ -15,8 +18,12 @@ const ViewActivities = ({ match }) => {
       setStudentActivities(allActivities.data.activities);
   };
 
-    return (
-        <ActivitiesTable activities={studentActivities}/>
+  return (
+    <Authenticated>
+      <Container id="activitiesContainer">
+      <ActivitiesTable activities={studentActivities} />
+      </Container>
+      </Authenticated>
     )
 };
 
