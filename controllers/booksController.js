@@ -4,9 +4,11 @@ const StudentModel = require('../models/StudentModel');
 module.exports = {
   create: async (req, res) => {
     try {
-      const {student_id, ...bookDetails} = req.body
+      //* separate student_id and the book details so that
+      const { student_id, ...bookDetails } = req.body
+      //* book gets saved
       const newBook = await BookModel.create(bookDetails);
-      console.log(newBook)
+      //* to the right student
       const student = await StudentModel.findById(student_id);
       student.saveBook(newBook);
       

@@ -13,7 +13,6 @@ const Activity = () => {
   const [description, setDescription] = useState();
   const [subject, setSubject] = useState();
   const [files, setFiles] = useState();
-  // const [date]
 
   const inputHandler = (event) => {
     event.preventDefault();

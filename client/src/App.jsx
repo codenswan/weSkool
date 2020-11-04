@@ -10,6 +10,7 @@ import NewStudent from './pages/NewStudent';
 import Register from './pages/Register';
 import ViewBooks from './pages/ViewBooks/ViewBooks';
 import ViewActivities from './pages/ViewActivities/ViewActivities';
+import StudentDetails from './pages/StudentDetails/StudentDetails';
 
 const App = () => {
 
@@ -19,7 +20,8 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/students" component={Students} />
+            <Route exact path="/students" component={Students} />
+            <Route exact path="/student_details/:student_id" component={StudentDetails} />
           <Route exact path="/students/log/:student_id" component={Menu} />
           <Route
             exact

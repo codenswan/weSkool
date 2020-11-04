@@ -26,6 +26,7 @@ module.exports = {
       res.status(422).json(error);
     }
   },
+  //* populate here references documents in book and activity docs.
   getAllBooks: async (req, res) => {
     try {
       const studentBooks = await StudentModel.findById(req.params.id).populate(

@@ -4,8 +4,6 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import './StudentButtons.css'
 
 const StudentButtons = (props) => {
-
-
   const studentBtns = {
     marginBottom: '10px',
     width: '100px'
