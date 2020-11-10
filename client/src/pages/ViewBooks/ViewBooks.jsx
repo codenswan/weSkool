@@ -18,6 +18,7 @@ const ViewBooks = ({ match }) => {
     let student_id = match.params.student_id;
     const allbooks = await StudentAPI.getStudentBooks(student_id);
     setStudentBooks(allbooks.data.books);
+    console.log(allbooks.data.books);
   };
 
   const deleteButton = async (id) => {
