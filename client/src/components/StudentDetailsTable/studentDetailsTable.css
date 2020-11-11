@@ -3,3 +3,8 @@
   background-color: white;
   margin-bottom: 0.5rem
 }
+
+
+#profilePhoto {
+  border-radius: 50%;
+}

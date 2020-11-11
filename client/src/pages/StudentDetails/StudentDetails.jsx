@@ -4,7 +4,7 @@ import StudentDetailsTable from '../../components/StudentDetailsTable/StudentDet
 import StudentAPI from '../../utils/studentAPI';
 import Authenticated from '../layout/Authenticated/Authenticated';
 import './studentDetails.css';
-import { Container } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import Footer from '../layout/Footer/Footer';
 
 const StudentDetails = () => {
@@ -24,6 +24,7 @@ const StudentDetails = () => {
     <Authenticated>
       <Container className="studentContainer">
         <h1 id="bannerText">weSkool</h1>
+        
         <StudentDetailsTable studentData={studentData}/>
       </Container>
       <Footer />
