@@ -1,30 +1,34 @@
 import React from 'react';
 import { Button, ButtonGroup, Card } from 'react-bootstrap';
-import './booksTable.css';
 
 //* the books prop is passed down from both search and saved pages
 const BooksTable = (props) => {
+  const bookCard = {
+    width: '100%',
+    marginBottom: '15px',
+    marginTop: '15px',
+  }
+
+
   return (
     <>
       {props.books.map((book) => (
-        <Card id="bookCard" key={book.ID}>
+        <Card style={bookCard} key={book.ID}>
+          <Card.Body>
           {book._id ? (
-            //*formats createdAt into readable date
-            <div>Log date: {new Date(book.createdAt).toDateString()}</div>
+            <Card.Text>Log date: {new Date(book.createdAt).toDateString()}</Card.Text>
           ) : (
             <Card.Header>
-              <Card.Img src={book.Image} style={{ width: '10rem' }} />
+              <Card.Img src={book.Image} style={{ width: '5rem' }} />
             </Card.Header>
           )}
 
-          <Card.Body>
             <Card.Title>
               {book.Title}: <Card.Subtitle>{book.Subtitle}</Card.Subtitle>
             </Card.Title>
             <Card.Text>Author: {book.Author}</Card.Text>
             {/* <Card.Text>Desciption: {book.Description} </Card.Text> */}
             <ButtonGroup>
-              //* conditional rendering for books from api and books from database
               {book._id ? (
                 <div>
                   <Button
