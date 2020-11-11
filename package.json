@@ -39,6 +39,7 @@
     "validator": "^13.1.17"
   },
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "concurrently": "^4.1.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.1",
