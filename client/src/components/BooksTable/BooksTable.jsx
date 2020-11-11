@@ -9,7 +9,7 @@ const BooksTable = (props) => {
       {props.books.map((book) => (
         <Card id="bookCard" key={book.ID}>
           {book._id ? (
-            //formats variable into readable date
+            //*formats createdAt into readable date
             <div>Log date: {new Date(book.createdAt).toDateString()}</div>
           ) : (
             <Card.Header>
@@ -24,6 +24,7 @@ const BooksTable = (props) => {
             <Card.Text>Author: {book.Author}</Card.Text>
             {/* <Card.Text>Desciption: {book.Description} </Card.Text> */}
             <ButtonGroup>
+              //* conditional rendering for books from api and books from database
               {book._id ? (
                 <div>
                   <Button
