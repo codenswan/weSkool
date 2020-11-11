@@ -4,7 +4,7 @@ import StudentDetailsTable from '../../components/StudentDetailsTable/StudentDet
 import StudentAPI from '../../utils/studentAPI';
 import Authenticated from '../layout/Authenticated/Authenticated';
 import './studentDetails.css';
-import { Container, Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Footer from '../layout/Footer/Footer';
 
 const StudentDetails = () => {

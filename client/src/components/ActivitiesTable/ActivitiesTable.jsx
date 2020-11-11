@@ -1,18 +1,9 @@
 import React from 'react';
-import { dataGrid } from '@material-ui/data-grid';
 import './activitiesTable.css';
-import { Card, Container, Table } from 'react-bootstrap';
-import Authenticated from '../../pages/layout/Authenticated/Authenticated';
+import { Card} from 'react-bootstrap';
 
 const ActivitiesTable = (props) => {
   console.log(props);
-
-  const columns = [
-    { field: 'title', headerName: 'Activity' },
-    { field: 'description', headerName: 'Description' },
-    { field: 'title', headerName: 'Activity' },
-    { field: 'title', headerName: 'Activity' },
-  ];
 
   return (
     <>

@@ -4,21 +4,16 @@ import './booksTable.css';
 
 //* the books prop is passed down from both search and saved pages
 const BooksTable = (props) => {
-
   return (
     <>
       {props.books.map((book) => (
-        
         <Card id="bookCard" key={book.ID}>
           {book._id ? (
             //formats variable into readable date
             <div>Log date: {new Date(book.createdAt).toDateString()}</div>
           ) : (
             <Card.Header>
-              <>
-                {' '}
-                <Card.Img src={book.Image} style={{ width: '10rem' }} />{' '}
-              </>{' '}
+              <Card.Img src={book.Image} style={{ width: '10rem' }} />
             </Card.Header>
           )}
 
