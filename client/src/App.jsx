@@ -13,15 +13,18 @@ import ViewActivities from './pages/ViewActivities/ViewActivities';
 import StudentDetails from './pages/StudentDetails/StudentDetails';
 
 const App = () => {
-
-    return (
+  return (
     <Router>
       <GlobalStore.GlobalProvider>
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/register" component={Register} />
-            <Route exact path="/students" component={Students} />
-            <Route exact path="/student/details/:student_id" component={StudentDetails} />
+          <Route exact path="/students" component={Students} />
+          <Route
+            exact
+            path="/student/details/:student_id"
+            component={StudentDetails}
+          />
           <Route exact path="/students/log/:student_id" component={Menu} />
           <Route
             exact
@@ -34,8 +37,16 @@ const App = () => {
             component={Activity}
           />
           <Route exact path="/students/new" component={NewStudent} />
-          <Route exact path="/students/viewbooks/:student_id" component={ViewBooks} />
-          <Route exact path="/students/viewactivities/:student_id" component={ViewActivities} />
+          <Route
+            exact
+            path="/students/viewbooks/:student_id"
+            component={ViewBooks}
+          />
+          <Route
+            exact
+            path="/students/viewactivities/:student_id"
+            component={ViewActivities}
+          />
         </Switch>
       </GlobalStore.GlobalProvider>
     </Router>

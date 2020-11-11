@@ -1,46 +1,38 @@
 import React from 'react';
-import {dataGrid} from '@material-ui/data-grid';
+import { dataGrid } from '@material-ui/data-grid';
 import './activitiesTable.css';
-import { Container, Table } from 'react-bootstrap';
+import { Card, Container, Table } from 'react-bootstrap';
+import Authenticated from '../../pages/layout/Authenticated/Authenticated';
 
 const ActivitiesTable = (props) => {
   console.log(props);
-  
+
   const columns = [
     { field: 'title', headerName: 'Activity' },
     { field: 'description', headerName: 'Description' },
     { field: 'title', headerName: 'Activity' },
     { field: 'title', headerName: 'Activity' },
-  ]
-
-  // createdAt: "2020-10-28T06:49:01.506Z"
-  // description: "qgerqrge"
-  // photo: "uploads/students/image/d8bf27bad1a9b2664a33034554448433"
-  // subject: "Creative"
-  // title: "ergqqerg"
+  ];
 
   return (
-    <Container>
-    <Table striped bordered hover >
-      <tbody>
+    <>
       {props.activities.map((activity) => (
-        <tr>
-  
-          <td>{activity.title}</td>
-          <td>{activity.description}</td>
-          <td>{activity.createdAt}</td>
-          {/* {activity.photo ? (
-            <td><img src={activity.photo.slice(7)} alt="" /></td>
+        <Card id="activityCard" key={activity._id}>
+          {activity.photo ? (
+            <Card.Img id="activityPhoto" src={activity.photo.slice(7)} alt="" />
           ) : (
             <div>no document or photos</div>
-          )} */}
-
-          </tr>
+          )}
+          <Card.Body>
+            <Card.Text>Activity: {activity.title}</Card.Text>
+            <Card.Text>Description: {activity.description}</Card.Text>
+            <Card.Text>
+              Created: {new Date(activity.createdAt).toDateString()}
+            </Card.Text>
+          </Card.Body>
+        </Card>
       ))}
-   
-      </tbody>
-      </Table>
-      </Container>
+    </>
   );
 };
 

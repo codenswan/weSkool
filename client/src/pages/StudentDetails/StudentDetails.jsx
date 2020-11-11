@@ -25,11 +25,6 @@ const StudentDetails = () => {
       <Container className="studentContainer">
         <h1 id="bannerText">weSkool</h1>
         <StudentDetailsTable studentData={studentData}/>
-        <ul>
-          {/* {studentData.map((student) => (
-            <li>{student.name}</li>
-          ))} */}
-        </ul>
       </Container>
       <Footer />
     </Authenticated>

@@ -3,7 +3,8 @@ import { Container } from 'react-bootstrap';
 import ActivitiesTable from '../../components/ActivitiesTable/ActivitiesTable';
 import StudentAPI from '../../utils/studentAPI';
 import Authenticated from '../layout/Authenticated/Authenticated';
-import './viewActivities.css'
+import Footer from '../layout/Footer/Footer';
+import './viewActivities.css';
 
 const ViewActivities = ({ match }) => {
   const [studentActivities, setStudentActivities] = useState([]);
@@ -15,16 +16,17 @@ const ViewActivities = ({ match }) => {
   const getAllStudentActivties = async () => {
     let student_id = match.params.student_id;
     const allActivities = await StudentAPI.getStudentActivities(student_id);
-      setStudentActivities(allActivities.data.activities);
+    setStudentActivities(allActivities.data.activities);
   };
 
   return (
     <Authenticated>
       <Container id="activitiesContainer">
-      <ActivitiesTable activities={studentActivities} />
+        <ActivitiesTable activities={studentActivities} />
       </Container>
-      </Authenticated>
-    )
+      <Footer />
+    </Authenticated>
+  );
 };
 
 export default ViewActivities;
