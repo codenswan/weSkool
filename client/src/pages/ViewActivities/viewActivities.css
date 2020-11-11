@@ -1,9 +1,8 @@
-.studentContainer {
-    background-color: #FCf0cf;
+#activitiesContainer {
+    background-color: #fcf0cf;
     height: 100%;
-    min-height: 100%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -13,9 +12,4 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
-
- #bannerText {
-   font-family: "Caveat";
-   font-size: 92px;
- }
+}

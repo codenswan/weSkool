@@ -15,7 +15,7 @@ connectDatabase();
 dotenv.config({ path: ".env" });
 
 const app = express();
-app.use(express.static('public'))
+app.use(express.static('uploads'))
 app.use([
   express.urlencoded({ extended: true }),
   express.json(),

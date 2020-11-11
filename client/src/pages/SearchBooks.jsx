@@ -73,7 +73,7 @@ const SearchBooks = ({ match }) => {
         value={searchTerm}
         onChange={handleInputChange}
       />
-      <Container>
+      <Container style={{backgroundColor:"#fcf0cf"}}>
         <BooksTable handleSaveBtn={handleSaveBtn} books={fetchedBooks} />
       </Container>
       <FooterPage />

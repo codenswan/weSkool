@@ -9,6 +9,7 @@ const StudentSchema = new Schema({
   },
   grade: { type: String, required: true },
   age: { type: Number, required: true },
+  //todo need to add photo for student portrait
   activities: [
     {
       type: Schema.Types.ObjectId,
@@ -20,6 +21,8 @@ const StudentSchema = new Schema({
     ref: 'Book',
   }]
 });
+
+//* methods to add book and activty id to student collection
 StudentSchema.methods.saveBook = function(book) {
   const bookID = book._id
   this.books.push(mongoose.Types.ObjectId(bookID))

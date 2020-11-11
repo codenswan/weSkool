@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // validation
+  //* validation
 
   User.create(req.body).then((created) => {
     res.json({
