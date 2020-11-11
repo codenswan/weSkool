@@ -1,0 +1,11 @@
+.viewContainer {
+    background-color: #fcf0cf;
+    height: 100%;
+    /* min-height: 100%; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+    margin-bottom: 50px;
+}

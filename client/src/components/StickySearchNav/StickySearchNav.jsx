@@ -1,8 +1,9 @@
 import React from 'react';
-import { FormControl, InputGroup, Navbar } from 'react-bootstrap';
+import { Container, FormControl, InputGroup, Navbar } from 'react-bootstrap';
 
 const StickySearchNav = (props) => {
   return (
+    <Container>
     <Navbar sticky="top">
       <InputGroup>
         <FormControl
@@ -24,7 +25,8 @@ const StickySearchNav = (props) => {
         </InputGroup.Append> */}
        
       </InputGroup> 
-    </Navbar>
+      </Navbar>
+      </Container>
   );
 };
 
