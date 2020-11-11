@@ -36,6 +36,7 @@ const ViewBooks = ({ match }) => {
           <BooksTable
             books={studentBooks}
             deleteButton={deleteButton}
+            fallback={"Loading..."}
           ></BooksTable>
         ) : (
           <h1>There are no books for this student</h1>

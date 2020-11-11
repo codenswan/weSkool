@@ -7,13 +7,14 @@
     align-items: center;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 50%;   
     left: 50%;
     /* -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); */
   }
 
   #bookCard {
+    width: 100%;
     margin-bottom: 15px;
     margin-top: 15px;
   }

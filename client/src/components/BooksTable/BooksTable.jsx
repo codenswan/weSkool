@@ -8,8 +8,10 @@ const BooksTable = (props) => {
   return (
     <>
       {props.books.map((book) => (
+        
         <Card id="bookCard" key={book.ID}>
           {book._id ? (
+            //formats variable into readable date
             <div>Log date: {new Date(book.createdAt).toDateString()}</div>
           ) : (
             <Card.Header>
